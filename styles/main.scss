@@ -11,12 +11,14 @@
 	position: fixed;
 	width: 100vw;
 	z-index: 25;
+
 	&__logo {
 		padding: 0.625rem;
 		& img {
 			height: 2.05rem;
 		}
 	}
+
 	&__username {
 		line-height: 1.75rem;
 		padding: 0.625rem;
@@ -32,16 +34,13 @@ h1 {
 	flex-direction: column;
 	position: relative;
 	top: 3.125rem;
+
 	@include tablet {
-		/**
-			TODO: Fix me
-		**/
+		flex-direction: row;
 	}
-	@include desktop {
-		/**
-			TODO: Fix me
-		**/
-	}
+
+	// @include desktop {
+	// }
 }
 
 .profile-card {
@@ -51,16 +50,14 @@ h1 {
 	justify-content: center;
 	background: $linkedin-accent-blue;
 	border-radius: 0.3125rem;
+
 	@include tablet {
-		/**
-			TODO: Fix me
-		**/
+		min-width: 30vw;
 	}
-	@include desktop {
-		/**
-			TODO: Fix me
-		**/
-	}
+
+	// @include desktop {
+	// }
+
 	&__img {
 		text-align: center;
 		padding: 0.625rem 0;
@@ -69,6 +66,7 @@ h1 {
 			height: 6.25rem;
 		}
 	}
+
 	&__title {
 		text-align: center;
 		background: $linkedin-light-blue;
@@ -90,6 +88,7 @@ h1 {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
+
 		&__img {
 			text-align: center;
 			padding: 0.625rem 0;
@@ -99,6 +98,7 @@ h1 {
 				height: 3.125rem;
 			}
 		}
+
 		&__text {
 			text-align: center;
 			padding: 0.625rem 0;
@@ -106,6 +106,7 @@ h1 {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
 			& input {
 				width: 80%;
 				height: 1.875rem;
@@ -121,6 +122,7 @@ h1 {
 		justify-content: space-evenly;
 		align-content: space-evenly;
 	}
+
 	&__item {
 		display: flex;
 		flex-direction: column;
@@ -130,6 +132,7 @@ h1 {
 		border-radius: 0.3125rem;
 		padding: 1.25rem;
 	}
+
 	&__username {
 		display: flex;
 		flex-direction: row;
@@ -137,6 +140,7 @@ h1 {
 		font-family: "LinkedIn SourceSans";
 		font-size: 1.25rem;
 	}
+
 	&__content {
 		display: flex;
 		flex-direction: row;
@@ -144,6 +148,7 @@ h1 {
 		font-family: "LinkedIn SourceSans";
 		font-size: 1.06rem;
 	}
+
 	&__like {
 		display: flex;
 		flex-direction: row;
