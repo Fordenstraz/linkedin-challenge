@@ -1,156 +1,138 @@
 .nav {
-	height: 3.125rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	background-color: #0077b5;
-	color: #ffffff;
-	position: fixed;
-	width: 100vw;
-	z-index: 25;
+  height: 3.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #0077b5;
+  color: #ffffff;
+  position: fixed;
+  width: 100vw;
+  z-index: 25;
 }
 .nav__logo {
-	padding: 0.625rem;
+  padding: 0.625rem;
 }
 .nav__logo img {
-	height: 2.05rem;
+  height: 2.05rem;
 }
 .nav__username {
-	line-height: 1.75rem;
-	padding: 0.625rem;
+  line-height: 1.75rem;
+  padding: 0.625rem;
 }
 
 h1 {
-	text-align: center;
+  text-align: center;
 }
 
 .container {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	top: 3.125rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 3.125rem;
 }
 @media screen and (min-width: 768px) {
-	.container {
-		/**
-    	TODO: Fix me
-    **/
-	}
-}
-@media screen and (min-width: 1024px) {
-	.container {
-		/**
-    	TODO: Fix me
-    **/
-	}
+  .container {
+    flex-direction: row;
+  }
 }
 
 .profile-card {
-	display: flex;
-	flex-direction: column;
-	margin: 1.25rem;
-	justify-content: center;
-	background: #00a0dc;
-	border-radius: 0.3125rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem;
+  justify-content: center;
+  background: #00a0dc;
+  border-radius: 0.3125rem;
 }
 @media screen and (min-width: 768px) {
-	.profile-card {
-		/**
-    	TODO: Fix me
-    **/
-	}
-}
-@media screen and (min-width: 1024px) {
-	.profile-card {
-		/**
-    	TODO: Fix me
-    **/
-	}
+  .profile-card {
+    min-width: 30vw;
+  }
 }
 .profile-card__img {
-	text-align: center;
-	padding: 0.625rem 0;
+  text-align: center;
+  padding: 0.625rem 0;
 }
 .profile-card__img img {
-	width: 6.25rem;
-	height: 6.25rem;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 .profile-card__title {
-	text-align: center;
-	background: #cfedfb;
-	padding: 1.25rem 0;
-	font-size: 1rem;
+  text-align: center;
+  background: #cfedfb;
+  padding: 1.25rem 0;
+  font-size: 1rem;
 }
 
 .start-post {
-	display: flex;
-	flex-direction: column;
-	margin: 1.25rem;
-	justify-content: center;
-	background: #ffffff;
-	border-radius: 0.3125rem;
-	padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 0.3125rem;
+  padding: 1.25rem;
 }
 .start-post-user {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .start-post-user__img {
-	text-align: center;
-	padding: 0.625rem 0;
-	width: 20%;
+  text-align: center;
+  padding: 0.625rem 0;
+  width: 20%;
 }
 .start-post-user__img img {
-	width: 3.125rem;
-	height: 3.125rem;
+  width: 3.125rem;
+  height: 3.125rem;
 }
 .start-post-user__text {
-	text-align: center;
-	padding: 0.625rem 0;
-	width: 80%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  text-align: center;
+  padding: 0.625rem 0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .start-post-user__text input {
-	width: 80%;
-	height: 1.875rem;
+  width: 80%;
+  height: 1.875rem;
 }
 
 @media screen and (min-width: 768px) {
-	.posts {
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		align-content: space-evenly;
-	}
+  .posts {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
 }
 .posts__item {
-	display: flex;
-	flex-direction: column;
-	margin: 1.25rem;
-	justify-content: center;
-	background: #ffffff;
-	border-radius: 0.3125rem;
-	padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 0.3125rem;
+  padding: 1.25rem;
 }
 .posts__username {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	font-family: "LinkedIn SourceSans";
-	font-size: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: "LinkedIn SourceSans";
+  font-size: 1.25rem;
 }
 .posts__content {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	font-family: "LinkedIn SourceSans";
-	font-size: 1.06rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: "LinkedIn SourceSans";
+  font-size: 1.06rem;
 }
 .posts__like {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}/*# sourceMappingURL=main.css.map */
