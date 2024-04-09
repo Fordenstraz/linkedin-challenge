@@ -1,5 +1,5 @@
-@use "partials/variables" as *;
-@use "partials/mixins" as *;
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
 
 .nav {
 	height: 3.125rem;
@@ -21,12 +21,16 @@
 
 	&__username {
 		line-height: 1.75rem;
-		padding: 0.625rem;
+		padding: 0.625rem 4rem;
 	}
 }
 
 h1 {
 	text-align: center;
+}
+
+.right-container {
+	width: 100%;
 }
 
 .container {
@@ -38,9 +42,6 @@ h1 {
 	@include tablet {
 		flex-direction: row;
 	}
-
-	// @include desktop {
-	// }
 }
 
 .profile-card {
@@ -54,9 +55,6 @@ h1 {
 	@include tablet {
 		min-width: 30vw;
 	}
-
-	// @include desktop {
-	// }
 
 	&__img {
 		text-align: center;
@@ -104,12 +102,26 @@ h1 {
 			padding: 0.625rem 0;
 			width: 80%;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
-			align-items: center;
+			align-items: flex-start;
 
 			& input {
-				width: 80%;
+				width: 18vw;
 				height: 1.875rem;
+				padding-left: 0.5rem;
+				margin-bottom: 0.5rem;
+				border: 0.063rem solid #0076b55d;
+				border-radius: 0.25rem;
+			}
+
+			& textarea {
+				width: 25vw;
+				height: 6rem;
+				padding-left: 0.5rem;
+				resize: none;
+				border: 0.063rem solid #0076b55d;
+				border-radius: 0.25rem;
 			}
 		}
 	}
@@ -129,29 +141,29 @@ h1 {
 		margin: 1.25rem;
 		justify-content: center;
 		background: $linkedin-white;
+		border: 0.125rem solid #0076b55d;
 		border-radius: 0.3125rem;
 		padding: 1.25rem;
 	}
 
-	&__username {
+	&__title {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		font-family: "LinkedIn SourceSans";
-		font-size: 1.25rem;
+		font-family: 'LinkedIn SourceSans';
+		font-size: 1.375rem;
+		margin: 0 0 0.5rem;
 	}
 
 	&__content {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		font-family: "LinkedIn SourceSans";
+		font-family: 'LinkedIn SourceSans';
 		font-size: 1.06rem;
 	}
+}
 
-	&__like {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-	}
+.btn--regular {
+	width: 4rem;
 }

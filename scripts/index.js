@@ -1,35 +1,82 @@
-/////////////////////////////////////////////////////////////
-/*
-ADD POSTS:
-- get form data
---- on submit create var for title and content
-- unshift to array
---- arrayOfPosts[post#][0-title, 1-content]
---- postFeed[]
+//Create a  func to load the user's data to the page:
+function loadUserProfile() {
+	//load username:
+	const usernameElements = document.querySelectorAll('.username');
+	for (let name of usernameElements) {
+		name.innerText = userProfile.username;
+	}
+	//load profile  image:
+	const profileImageElements = document.querySelectorAll('.profile-pic');
+	for (let img of profileImageElements) {
+		img.setAttribute('src', userProfile.profilePicture);
+	}
+	//load job title:
+	const jobTitleElement = document.getElementById('job-title');
+	jobTitleElement.innerText = userProfile.jobTitle;
+}
 
-POST OBJ
-0-title
-1-content
-2-likes
-*/
+loadUserProfile();
 
-// const postElem1 = document.getElementById("post1");
-// console.dir(postElem1.children[1]);
-// postElem1 =
+///////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////
+const createPost = (click, userProfile) => {
+	//stop refresh:
+	click.preventDefault();
 
-const postContent1 = {
-	title: 'Communicating Through Dance',
-	body: 'Honey bees go out in search of flowers to gather pollen from. When they find a large group of flowers they will return to their hive and perform the "Waggle". The "Waggle" is a dance performed in a figure-8 shape. It tells their other bee friends that they`ve found a jackpot of pollen. Then a whole possy of bees will head over to the flowers, gather up a bunch of pollen, and create even more honey!',
+	//grab form data:
+	const username = userProfile.username;
+	const postTitle = click.target.title.value;
+	const postContent = click.target.body.value;
+	const postBtn = document.querySelector('#post-btn');
+
+	//check for post content:
+	if (postTitle && postContent) {
+		//select parent div where post will be created:
+		const parentDiv = document.querySelector('.posts');
+		//create a new post element:
+		const postDiv = document.createElement('div');
+		//add the class:
+		postDiv.classList.add('posts__item');
+		//create the post elements as children, including classes and content:
+		//create the post title:
+		const postTitlePar = document.createElement('p');
+		//add the class:
+		postTitlePar.classList.add('posts__title');
+		//insert post title content:
+		postTitlePar.innerText = username + ' has posted: ' + postTitle;
+		//add post title to the new post:
+		postDiv.append(postTitlePar);
+
+		//create the post body:
+		const postBodyPar = document.createElement('p');
+		//add the class:
+		postBodyPar.classList.add('posts__content');
+		//insert post body text:
+		postBodyPar.innerText = postContent;
+		//add post body to the new post:
+		postDiv.append(postBodyPar);
+
+		//create the post's like button:
+		const postLikeBtn = document.createElement('button');
+		//add the class:
+		postLikeBtn.classList.add('btn--regular');
+		//insert button text:
+		postLikeBtn.innerText = 'Like';
+		//add like button to the new post:
+		postDiv.append(postLikeBtn);
+
+		//add the new post element to the parent div:
+		parentDiv.prepend(postDiv);
+	} else {
+		postBtn.setAttribute('disabled');
+	}
 };
 
-const postContent2 = {
-	title: 'Hustle, Hustle, Hustle',
-	body: 'A bee beats their wings 11,400 times a minute! That is nearly 200 times per second. Each beehive can create around 45kg (about 100 pounds) of honey a year. Not bad, for having brains the size of poppy seeds!',
-};
+///////////////////////////////////////////////////////////////////////////////
 
-const postContent3 = {
-	title: 'Eyes On The Back Of Your Head!',
-	body: 'It sounds totally weird but it`s true. In addition to their two big eyes (one on each side of the head) bees also have three eyes (know as "ocelli") on the tops of their heads. These eyes don`t see as well but they can detect changes in light.',
-};
+//DOM event to run createPost function on click of 'post' button:
+const postButtonElement = document.querySelector('.start-post-user__text');
+
+postButtonElement.addEventListener('submit', event => {
+	createPost(event, userProfile);
+});
